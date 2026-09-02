@@ -1,0 +1,342 @@
+.projects-showcase-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+/* ==========================================================================
+   PROJECT FOLDER HEADER & TABS (UPPER AREA)
+   ========================================================================== */
+.project-folder-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 680px;
+  margin-bottom: 2rem;
+  z-index: 20;
+}
+
+.project-folder-active-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 18px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 14px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 102, 255, 0.12);
+}
+
+.project-folder-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-folder-icon {
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+}
+
+.project-folder-path {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.82rem;
+  color: #94A3B8;
+  letter-spacing: 0.05em;
+}
+
+.project-folder-name-highlight {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.project-folder-nav-btns {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.project-nav-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.project-nav-btn:hover {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: #38bdf8;
+  color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+.project-nav-btn:active {
+  transform: translateY(1px);
+}
+
+/* FOLDER TABS */
+.project-folder-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.project-folder-tab {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.78rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94A3B8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.project-folder-tab:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.project-folder-tab.active {
+  background: rgba(0, 102, 255, 0.25);
+  border-color: #38bdf8;
+  color: #38bdf8;
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+}
+
+/* ==========================================================================
+   CARD SWAP MAIN CONTAINER
+   ========================================================================== */
+.card-swap-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+  overflow: visible;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.card-swap-wrapper:active {
+  cursor: grabbing;
+}
+
+.card-swap-container {
+  position: relative;
+  width: 480px;
+  height: 330px;
+  perspective: 1000px;
+  overflow: visible;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 15, 26, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 30px rgba(0, 102, 255, 0.12);
+  transform-style: preserve-3d;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.card:hover {
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 40px rgba(0, 102, 255, 0.25);
+}
+
+.project-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-card-badge {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.project-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(0, 102, 255, 0.15);
+  border: 1px solid rgba(0, 102, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+}
+
+.project-card-body {
+  margin: 1rem 0;
+}
+
+.project-card-title {
+  font-family: var(--font-heading, 'Satoshi', sans-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.project-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #94A3B8;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-card-tech {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.8rem;
+  color: #64748B;
+}
+
+.project-card-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.project-card-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.project-card-link-btn:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.card-swap-hint-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.card-swap-hint-pill {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.78rem;
+  color: #94A3B8;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-swap-hint-pill kbd {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.72rem;
+  color: #38bdf8;
+}
+
+@media (max-width: 768px) {
+  .project-folder-header {
+    margin-bottom: 1rem;
+  }
+
+  .project-folder-active-bar {
+    padding: 8px 12px;
+  }
+
+  .card-swap-wrapper {
+    min-height: 420px;
+  }
+
+  .card-swap-container {
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 480px) {
+  .project-folder-tabs {
+    gap: 4px;
+  }
+
+  .project-folder-tab {
+    font-size: 0.72rem;
+    padding: 4px 10px;
+  }
+
+  .card-swap-wrapper {
+    min-height: 370px;
+  }
+
+  .card-swap-container {
+    transform: scale(0.68);
+  }
+}

@@ -1,0 +1,134 @@
+%PDF-1.4
+1 0 obj
+<<
+  /Type /Catalog
+  /Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+  /Type /Pages
+  /Kids [3 0 R]
+  /Count 1
+>>
+endobj
+3 0 obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /Resources <<
+    /Font <<
+      /F1 4 0 R
+    >>
+  >>
+  /MediaBox [0 0 612 792]
+  /Contents 5 0 R
+>>
+endobj
+4 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica
+>>
+endobj
+5 0 obj
+<< /Length 2003 >>
+stream
+BT
+/F1 22 Tf
+50 740 Td
+(SHAILENDER DUBEY) Tj
+/F1 12 Tf
+0 -20 Td
+(Python Developer | Web Developer | AI Enthusiast) Tj
+0 -15 Td
+(Email: shailenderdubey00@gmail.com | Phone: +91 8707322859 | India) Tj
+0 -15 Td
+(LinkedIn: https://www.linkedin.com/in/shailender-dubey-b12a32336) Tj
+
+0 -30 Td
+/F1 14 Tf
+(EDUCATION) Tj
+0 -5 Td
+(________________________________________________________________________________) Tj
+0 -18 Td
+/F1 11 Tf
+(B.Tech in Computer Science | Expected Graduation: 2027) Tj
+
+0 -30 Td
+/F1 14 Tf
+(TECHNICAL SKILLS) Tj
+0 -5 Td
+(________________________________________________________________________________) Tj
+0 -18 Td
+/F1 11 Tf
+(Programming: Python, JavaScript) Tj
+0 -15 Td
+(Web Development: HTML5, CSS3, JavaScript, React, Vite, Responsive Design) Tj
+0 -15 Td
+(Databases: SQL, DBMS, Supabase) Tj
+0 -15 Td
+(Artificial Intelligence: Generative AI, Gemini API, AI-Powered Applications) Tj
+0 -15 Td
+(Tools & Technologies: Git, GitHub, VS Code, Power BI) Tj
+
+0 -30 Td
+/F1 14 Tf
+(PROJECTS) Tj
+0 -5 Td
+(________________________________________________________________________________) Tj
+0 -18 Td
+/F1 12 Tf
+(1. AI Chatbox) Tj
+0 -14 Td
+/F1 11 Tf
+(   - Intelligent conversational AI interface with context awareness & natural response generation.) Tj
+0 -14 Td
+(   - Tech Stack: Python, Gemini API, WebSockets) Tj
+
+0 -20 Td
+/F1 12 Tf
+(2. Sahay) Tj
+0 -14 Td
+/F1 11 Tf
+(   - Digital assistance platform connecting individuals with community help and emergency resources.) Tj
+0 -14 Td
+(   - Tech Stack: React, Node.js, Supabase, Web) Tj
+
+0 -20 Td
+/F1 12 Tf
+(3. Moodify) Tj
+0 -14 Td
+/F1 11 Tf
+(   - AI-powered emotion analysis and music recommendation engine tailored to real-time mood.) Tj
+0 -14 Td
+(   - Tech Stack: Python, OpenCV, Gemini API, React) Tj
+
+0 -20 Td
+/F1 12 Tf
+(4. Personal Developer Portfolio) Tj
+0 -14 Td
+/F1 11 Tf
+(   - Interactive glassmorphic developer portfolio featuring custom WebGL shaders & micro-interactions.) Tj
+0 -14 Td
+(   - Tech Stack: React, Vite, TypeScript, CSS3) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000060 00000 n 
+0000000117 00000 n 
+0000000224 00000 n 
+0000000293 00000 n 
+trailer
+<<
+  /Size 6
+  /Root 1 0 R
+>>
+startxref
+2353
+%%EOF
