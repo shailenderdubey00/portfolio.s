@@ -11,6 +11,7 @@ import { Magnet } from './components/Magnet';
 import { StaggeredMenu } from './components/StaggeredMenu';
 import { ProfileCard } from './components/ProfileCard';
 import { Footer } from './components/Footer';
+import { MobileNav } from './components/MobileNav';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -248,6 +249,9 @@ function App() {
       
       {/* Resume Modal */}
       <ResumeModal isOpen={isResumeModalOpen} onClose={() => setIsResumeModalOpen(false)} />
+
+      {/* Floating Mobile Bottom Navigation Dock (<= 768px) */}
+      <MobileNav activeSection={activeSection} />
     </>
   );
 }
