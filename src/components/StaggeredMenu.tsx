@@ -46,7 +46,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   displayItemNumbering = true,
   className = '',
   logoUrl,
-  logoText = 'SD.',
+  logoText = 'PORTFOLIO',
   menuButtonColor = '#fff',
   openMenuButtonColor = '#38bdf8',
   accentColor = '#38bdf8',

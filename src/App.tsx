@@ -12,6 +12,7 @@ import { Magnet } from './components/Magnet';
 import { ClickSpark } from './components/ClickSpark';
 import { StaggeredMenu } from './components/StaggeredMenu';
 import { ProfileCard } from './components/ProfileCard';
+import { Footer } from './components/Footer';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -154,7 +155,7 @@ function App() {
         openMenuButtonColor="#38bdf8"
         accentColor="#38bdf8"
         colors={['#010819', '#002677', '#0066ff']}
-        logoText="SHAILENDER DUBEY"
+        logoText="PORTFOLIO"
         isFixed={true}
         onMenuOpen={() => setIsMenuOpen(true)}
         onMenuClose={() => setIsMenuOpen(false)}
@@ -197,13 +198,22 @@ function App() {
               {/* RIGHT SIDE PROFILE CARD */}
               <div className="home-profile-card-wrapper">
                 <ProfileCard
+                  avatarUrl="/profile.jpg"
                   name="Shailender Dubey"
-                  title=""
-                  showUserInfo={false}
+                  title="Python & AI Developer"
+                  handle="shailender"
+                  status="Available for Work"
+                  showUserInfo={true}
                   behindGlowEnabled={true}
                   behindGlowColor="rgba(56, 189, 248, 0.5)"
                   behindGlowSize="50%"
                   enableTilt={true}
+                  onContactClick={() => {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 />
               </div>
             </div>
@@ -255,6 +265,12 @@ function App() {
           <section id="contact" ref={contactSectionRef} style={{ position: 'relative', padding: 0 }}>
             <CursorTrailContact />
           </section>
+
+          {/* SITE FOOTER */}
+          <Footer
+            onViewResume={() => setIsResumeModalOpen(true)}
+            onDownloadResume={handleDownloadResume}
+          />
         </main>
       </ClickSpark>
       

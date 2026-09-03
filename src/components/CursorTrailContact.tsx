@@ -61,13 +61,8 @@ export const CursorTrailContact: React.FC = () => {
       mouse.x += (mouse.targetX - mouse.x) * 0.12;
       mouse.y += (mouse.targetY - mouse.y) * 0.12;
 
-      // Dark background gradient
-      const grad = ctx.createLinearGradient(0, height, width, 0);
-      grad.addColorStop(0, '#161618');
-      grad.addColorStop(0.5, '#0e0e10');
-      grad.addColorStop(1, '#070708');
-      ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, width, height);
+      // Transparent background so blue fluid simulation renders through
+      ctx.clearRect(0, 0, width, height);
 
       // Update ripples
       for (let i = ripples.length - 1; i >= 0; i--) {
@@ -236,13 +231,6 @@ export const CursorTrailContact: React.FC = () => {
           </div>
         )}
       </section>
-
-      <footer className="reveal contact-footer" style={{ '--reveal-delay': '0.45s' } as React.CSSProperties}>
-        <div className="contact-footer-brand">
-          <span>&copy; {new Date().getFullYear()} Shailender Dubey</span>
-        </div>
-        <p className="cursor-hint">( move your cursor )</p>
-      </footer>
     </main>
   );
 };

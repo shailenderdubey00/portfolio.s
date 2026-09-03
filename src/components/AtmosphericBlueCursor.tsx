@@ -866,7 +866,7 @@ export const AtmosphericBlueCursor: React.FC = () => {
         width: '100vw',
         height: '100vh',
         pointerEvents: 'none',
-        zIndex: 0,
+        zIndex: 1,
         display: 'block'
       }}
       aria-hidden="true"

@@ -1,0 +1,133 @@
+/* ==========================================================================
+   MINIMAL FOOTER STYLES
+   ========================================================================== */
+.minimal-footer {
+  position: relative;
+  background: #000000;
+  color: #ffffff;
+  padding: 28px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.minimal-footer-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.5) 50%, transparent 100%);
+}
+
+.minimal-footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* LEFT BRANDING */
+.minimal-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.78rem;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+}
+
+.minimal-footer-brand {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.minimal-footer-dot {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.minimal-footer-sub {
+  color: #64748b;
+}
+
+/* CENTER LINKS */
+.minimal-footer-center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.minimal-footer-link,
+.minimal-footer-btn-link {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.minimal-footer-link:hover,
+.minimal-footer-btn-link:hover {
+  color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+/* RIGHT BACK TO TOP */
+.minimal-footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.minimal-back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.minimal-back-to-top:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: #38bdf8;
+  color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .minimal-footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .minimal-footer-left {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .minimal-footer-center {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

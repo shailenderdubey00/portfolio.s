@@ -59,9 +59,12 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
         <div className="resume-modal-body" id="printable-resume">
           {/* Header Section */}
           <header className="resume-doc-header">
-            <div className="resume-header-main">
-              <h1 className="resume-name">Shailender Dubey</h1>
-              <p className="resume-tagline">Python Developer &bull; Web Developer &bull; AI Enthusiast</p>
+            <div className="resume-header-top">
+              <img src="/profile.jpg" alt="Shailender Dubey" className="resume-avatar-img" />
+              <div className="resume-header-main">
+                <h1 className="resume-name">Shailender Dubey</h1>
+                <p className="resume-tagline">Python Developer &bull; Web Developer &bull; AI Enthusiast</p>
+              </div>
             </div>
             
             <div className="resume-contact-grid">

@@ -254,6 +254,8 @@ nav.scrolled .hamburger span {
     justify-content: center;
     align-items: center;
     width: 100%;
+    position: relative;
+    z-index: 20;
 }
 
 @media (max-width: 960px) {
@@ -474,6 +476,21 @@ nav.scrolled .hamburger span {
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
+}
+
+@media (max-width: 768px) {
+    .about-section-relative {
+        padding: 60px 0;
+    }
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .about-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
 }
 
 .about-list li span:last-child {
@@ -993,9 +1010,10 @@ footer {
   isolation: isolate;
   display: flex;
   flex-direction: column;
-  min-height: 100dvh;
+  min-height: 75vh;
+  padding: 60px 0;
   overflow: hidden;
-  background: #070708;
+  background: transparent;
   color: #ffffff;
   font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -1007,6 +1025,7 @@ footer {
   inset: 0;
   z-index: 0;
   pointer-events: auto;
+  background: transparent;
 }
 
 .contact-invite {
@@ -1019,6 +1038,7 @@ footer {
   justify-content: center;
   padding: 0 1.5rem;
   text-align: center;
+  background: transparent;
 }
 
 .contact-invite h2 {
@@ -1089,6 +1109,7 @@ footer {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.4);
+  background: transparent;
 }
 
 @media (min-width: 640px) {
@@ -1112,16 +1133,16 @@ footer {
   position: relative;
   width: 46px;
   height: 46px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   cursor: pointer;
   outline: none;
-  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .icons:hover {
@@ -1146,6 +1167,12 @@ footer {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
   transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   z-index: 100;
+}
+
+/* AI Bot */
+.icons.aiBot:hover .iconName {
+  transform: translateX(-50%) scale(1);
+  background: linear-gradient(135deg, #0066ff, #38bdf8);
 }
 
 /* Phone (replacing Instagram) */
@@ -1188,7 +1215,7 @@ footer {
   border: none;
   outline: none;
   transition: color 0.3s ease, box-shadow 0.3s ease;
-  color: #0c0c0c;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -1213,6 +1240,12 @@ footer {
 .icon:hover::before {
   height: 100%;
   z-index: -1;
+}
+
+/* AI Bot background */
+.icon.ai-bot-icon::before {
+  z-index: -1;
+  background: linear-gradient(135deg, #0066ff, #38bdf8);
 }
 
 /* Phone background */
