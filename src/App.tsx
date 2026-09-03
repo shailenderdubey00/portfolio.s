@@ -5,11 +5,9 @@ import { Resume } from './components/Resume';
 import { ResumeModal } from './components/ResumeModal';
 import { Toast } from './components/Toast';
 import { CursorTrailContact } from './components/CursorTrailContact';
-import { HandLoader } from './components/HandLoader';
 import { AtmosphericBlueCursor } from './components/AtmosphericBlueCursor';
 import { ShapeGrid } from './components/ShapeGrid';
 import { Magnet } from './components/Magnet';
-import { ClickSpark } from './components/ClickSpark';
 import { StaggeredMenu } from './components/StaggeredMenu';
 import { ProfileCard } from './components/ProfileCard';
 import { Footer } from './components/Footer';
@@ -20,8 +18,6 @@ function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [toastVisible, setToastVisible] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isFadingOut, setIsFadingOut] = useState(false);
 
   const homeSectionRef = useRef<HTMLElement>(null);
   const aboutSectionRef = useRef<HTMLElement>(null);
@@ -33,15 +29,6 @@ function App() {
       window.history.scrollRestoration = 'manual';
     }
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-
-    const timer = setTimeout(() => {
-      setIsFadingOut(true);
-      setTimeout(() => {
-        setIsLoading(false);
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      }, 600);
-    }, 1800);
-    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -132,15 +119,6 @@ function App() {
 
   return (
     <>
-      {isLoading && (
-        <div className={`preloader-overlay ${isFadingOut ? 'fade-out' : ''}`}>
-          <div className="preloader-content">
-            <HandLoader skinColor="#E4C560" tapSpeed="0.6s" />
-            <p className="preloader-text">Loading Experience...</p>
-          </div>
-        </div>
-      )}
-
       {/* Atmospheric Multi-Shade Blue Interactive Cursor Canvas */}
       <AtmosphericBlueCursor />
 
@@ -163,116 +141,108 @@ function App() {
         onDownloadResume={handleDownloadResume}
       />
 
-      <ClickSpark
-        sparkColor="#38bdf8"
-        sparkSize={18}
-        sparkRadius={35}
-        sparkCount={12}
-        duration={420}
-      >
-        <main style={{ position: 'relative', zIndex: 10 }}>
-          {/* MINIMAL HERO SECTION */}
-          <section id="home" className="section fade-up" ref={homeSectionRef} style={{ position: 'relative' }}>
-            <div className="container home-container">
-              <div className="home-content">
-                <Magnet padding={70} magnetStrength={3.5} wrapperClassName="hero-magnet-name">
-                  <h1 className="main-title">Shailender Dubey</h1>
-                </Magnet>
-                <h2 className="sub-title">Python Developer &middot; Web Developer &middot; AI Enthusiast</h2>
-                <p className="intro-text">
-                  Building clean digital experiences with Python, web technologies and AI.
-                </p>
-                
-                <div className="home-actions">
-                  <a href="#projects" className="explore-projects-btn">
-                    Explore Projects
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14"></path>
-                      <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                  </a>
-                  <Resume resumeUrl="/Shailender_Dubey_Resume.pdf" fileName="Shailender_Dubey_Resume.pdf" />
-                </div>
-              </div>
-
-              {/* RIGHT SIDE PROFILE CARD */}
-              <div className="home-profile-card-wrapper">
-                <ProfileCard
-                  avatarUrl="/profile.jpg"
-                  name="Shailender Dubey"
-                  title="Python & AI Developer"
-                  handle="shailender"
-                  status="Available for Work"
-                  showUserInfo={true}
-                  behindGlowEnabled={true}
-                  behindGlowColor="rgba(56, 189, 248, 0.5)"
-                  behindGlowSize="50%"
-                  enableTilt={true}
-                  onContactClick={() => {
-                    const contactSection = document.getElementById('contact');
-                    if (contactSection) {
-                      contactSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                />
-              </div>
-            </div>
-          </section>
-
-          {/* ABOUT SECTION */}
-          <section id="about" className="section fade-up about-section-relative" ref={aboutSectionRef}>
-            <div className="shapegrid-bg-wrapper">
-              <ShapeGrid
-                speed={0.4}
-                squareSize={42}
-                direction="diagonal"
-                borderColor="rgba(0, 102, 255, 0.16)"
-                hoverFillColor="rgba(0, 102, 255, 0.35)"
-                shape="hexagon"
-                hoverTrailAmount={6}
-              />
-              <div className="shapegrid-bg-overlay" />
-            </div>
-
-            <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-              <div className="section-header">
-                <span className="section-num">01</span>
-                <h2 className="section-title">About Me</h2>
-              </div>
+      <main style={{ position: 'relative', zIndex: 10 }}>
+        {/* MINIMAL HERO SECTION */}
+        <section id="home" className="section fade-up" ref={homeSectionRef} style={{ position: 'relative' }}>
+          <div className="container home-container">
+            <div className="home-content">
+              <Magnet padding={70} magnetStrength={3.5} wrapperClassName="hero-magnet-name">
+                <h1 className="main-title">Shailender Dubey</h1>
+              </Magnet>
+              <h2 className="sub-title">Python Developer &middot; Web Developer &middot; AI Enthusiast</h2>
+              <p className="intro-text">
+                Building clean digital experiences with Python, web technologies and AI.
+              </p>
               
-              <div className="about-content">
-                <p className="about-text">
-                  I am a Computer Science student passionate about Python development, web development, artificial intelligence and building useful digital products.
-                </p>
-                
-                <ul className="about-list">
-                  <li><span>Degree</span>B.Tech in Computer Science</li>
-                  <li><span>Expected Graduation</span>2027</li>
-                  <li><span>Current Focus</span>Python, Web Development, AI and Data</li>
-                  <li><span>Location</span>India</li>
-                </ul>
+              <div className="home-actions">
+                <a href="#projects" className="explore-projects-btn">
+                  Explore Projects
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </a>
+                <Resume resumeUrl="/Shailender_Dubey_Resume.pdf" fileName="Shailender_Dubey_Resume.pdf" />
               </div>
             </div>
-          </section>
 
-          {/* SKILLS SECTION */}
-          <Skills />
+            {/* RIGHT SIDE PROFILE CARD */}
+            <div className="home-profile-card-wrapper">
+              <ProfileCard
+                avatarUrl="/profile.jpg"
+                name="Shailender Dubey"
+                title="Python & AI Developer"
+                handle="shailender"
+                status="Available for Work"
+                showUserInfo={true}
+                behindGlowEnabled={true}
+                behindGlowColor="rgba(56, 189, 248, 0.5)"
+                behindGlowSize="50%"
+                enableTilt={true}
+                onContactClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              />
+            </div>
+          </div>
+        </section>
 
-          {/* PROJECTS SECTION */}
-          <Projects />
+        {/* ABOUT SECTION */}
+        <section id="about" className="section fade-up about-section-relative" ref={aboutSectionRef}>
+          <div className="shapegrid-bg-wrapper">
+            <ShapeGrid
+              speed={0.4}
+              squareSize={42}
+              direction="diagonal"
+              borderColor="rgba(0, 102, 255, 0.16)"
+              hoverFillColor="rgba(0, 102, 255, 0.35)"
+              shape="hexagon"
+              hoverTrailAmount={6}
+            />
+            <div className="shapegrid-bg-overlay" />
+          </div>
 
-          {/* CONTACT SECTION */}
-          <section id="contact" ref={contactSectionRef} style={{ position: 'relative', padding: 0 }}>
-            <CursorTrailContact />
-          </section>
+          <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+            <div className="section-header">
+              <span className="section-num">01</span>
+              <h2 className="section-title">About Me</h2>
+            </div>
+            
+            <div className="about-content">
+              <p className="about-text">
+                I am a Computer Science student passionate about Python development, web development, artificial intelligence and building useful digital products.
+              </p>
+              
+              <ul className="about-list">
+                <li><span>Degree</span>B.Tech in Computer Science</li>
+                <li><span>Expected Graduation</span>2027</li>
+                <li><span>Current Focus</span>Python, Web Development, AI and Data</li>
+                <li><span>Location</span>India</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-          {/* SITE FOOTER */}
-          <Footer
-            onViewResume={() => setIsResumeModalOpen(true)}
-            onDownloadResume={handleDownloadResume}
-          />
-        </main>
-      </ClickSpark>
+        {/* SKILLS SECTION */}
+        <Skills />
+
+        {/* PROJECTS SECTION */}
+        <Projects />
+
+        {/* CONTACT SECTION */}
+        <section id="contact" ref={contactSectionRef} style={{ position: 'relative', padding: 0 }}>
+          <CursorTrailContact />
+        </section>
+
+        {/* SITE FOOTER */}
+        <Footer
+          onViewResume={() => setIsResumeModalOpen(true)}
+          onDownloadResume={handleDownloadResume}
+        />
+      </main>
       
       <Toast message="Thanks for reaching out! I'll get back to you soon." isVisible={toastVisible} onClose={() => setToastVisible(false)} />
       

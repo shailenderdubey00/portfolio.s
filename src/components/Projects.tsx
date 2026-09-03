@@ -41,10 +41,6 @@ export const Projects: React.FC = () => {
 
           {/* Uiverse Glass Cards Stack Showcase (by codebykay101) */}
           <div className="uiverse-deck-wrapper">
-            <p className="uiverse-deck-subtitle">
-              Hover over the cards deck to expand &bull; Click any card for details
-            </p>
-
             <div className="uiverse-deck-container">
               {projectsData.map((project, idx) => {
                 const angle = deckAngles[idx % deckAngles.length];

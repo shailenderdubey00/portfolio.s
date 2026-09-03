@@ -46,10 +46,6 @@ export const Skills: React.FC = () => {
             enableHover={true}
           />
         </div>
-
-        <p className="bounce-cards-hint">
-          Hover over any card to expand &bull; Sibling cards dynamically spread
-        </p>
       </div>
     </section>
   );
